@@ -89,8 +89,7 @@ export interface AnagraficaFornitore {
 	extra: string;
 }
 
-export interface AnagraficaNuovoSingoloResponse {
-	success: boolean;
+export interface AnagraficaNuovoSingoloResponse extends GenericSuccess {
 	// Identificativo del cliente o fornitore creato
 	id: number;
 }

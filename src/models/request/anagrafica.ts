@@ -19,41 +19,41 @@ export interface AnagraficaNuovoSingoloRequest extends Auth {
 	// Nome o ragione sociale del cliente
 	nome: string;
 	// Nome referente
-	referente: string;
+	referente?: string;
 	// Indirizzo del cliente
-	indirizzo_via: string;
+	indirizzo_via?: string;
 	// CAP del cliente
-	indirizzo_cap: string;
+	indirizzo_cap?: string;
 	// Città (comune) del cliente
-	indirizzo_citta: string;
+	indirizzo_citta?: string;
 	// Provincia del cliente
-	indirizzo_provincia: string;
+	indirizzo_provincia?: string;
 	// Note extra sull'indirizzo
 	indirizzo_extra?: string;
 	// Paese (nazionalità) del cliente
-	paese: string;
+	paese?: string;
 	// [Solo se "paese" non è valorizzato] Codice ISO del paese (nazionalità) del cliente (formato ISO alpha-2)
 	paese_iso?: string;
 	// Indirizzo di posta elettronica
-	mail: string;
+	mail?: string;
 	// Recapito telefonico
-	tel: string;
+	tel?: string;
 	// Numero fax
-	fax: string;
+	fax?: string;
 	// Partita IVA
-	piva: string;
+	piva?: string;
 	// Codice fiscale
-	cf: string;
+	cf?: string;
 	// [Solo clienti] Termini di pagamento predefiniti (giorni a partire dalla data del documento)
-	termini_pagamento: number;
+	termini_pagamento?: number;
 	// [Solo clienti] Indica se la scadenza del pagamento deve avvenire alla fine del mese (dopo i giorni specificati in 'termini_pagamento')
-	pagamento_fine_mese: boolean;
+	pagamento_fine_mese?: boolean;
 	// [Solo clienti] Codice IVA predefinito
 	cod_iva_default?: number;
 	// Informazioni extra sul cliente
-	extra: string;
+	extra?: string;
 	// [Solo clienti] Indica se il cliente è una pubblica amministrazione
-	PA: boolean;
+	PA?: boolean;
 	// [Solo clienti con PA=true] Codice pubblica amministrazione
 	PA_codice?: string;
 }
@@ -63,7 +63,7 @@ export interface AnagraficaNuovoListaRequest extends Auth {
 	lista_soggetti: Array<AnagraficaNuovoSingoloRequest>;
 }
 
-export interface AnagraficaModificaRequest extends AnagraficaNuovoSingoloRequest {
+export interface AnagraficaModificaRequest extends Partial<AnagraficaNuovoSingoloRequest> {
 }
 
 export interface AnagraficaEliminaRequest {

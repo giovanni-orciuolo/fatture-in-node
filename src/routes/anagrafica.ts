@@ -21,7 +21,7 @@ function make(soggetto: "clienti" | "fornitori") {
 		 * vengono organizzati in pagine per evitare risposte troppo pesanti
 		 * (attualmente 500 risultati per pagina).
 		 */
-		lista: (req: AnagraficaListaRequest) => call<AnagraficaListaResponse>(`/${soggetto}/list`, req),
+		lista: (req: AnagraficaListaRequest) => call<AnagraficaListaResponse>(`/${soggetto}/lista`, req),
 		/**
 		 * Crea un nuovo cliente o fornitore. In caso di parametri non specificati vengono assunti quelli predefiniti.
 		 */
