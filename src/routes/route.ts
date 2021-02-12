@@ -1,4 +1,4 @@
-import { GenericError } from "../models/error";
+import { GenericError } from "../models/response/error";
 
 const FIC_ENDPOINT = "https://api.fattureincloud.it/v1";
 

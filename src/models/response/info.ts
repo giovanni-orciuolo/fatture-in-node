@@ -1,4 +1,4 @@
-import { GenericSuccess } from "../success";
+import { GenericSuccess } from "./success";
 
 export interface Info extends GenericSuccess {
 	messaggio: string;

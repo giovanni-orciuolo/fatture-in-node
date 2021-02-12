@@ -6,7 +6,7 @@ import {
 	ProdottiNuovoSingoloRequest
 } from "../models/request/prodotto";
 import { ProdottiListaResponse, ProdottiNuovoSingoloResponse } from "../models/response/prodotto";
-import { GenericSuccess } from "../models/success";
+import { GenericSuccess } from "../models/response/success";
 
 export const prodotti = {
 	/**

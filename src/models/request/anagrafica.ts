@@ -1,6 +1,7 @@
 import { Auth } from "./auth";
+import { RequestPagination } from "./pagination";
 
-export interface AnagraficaListaRequest extends Auth {
+export interface AnagraficaListaRequest extends Auth, RequestPagination {
 	// Filtro generico che restringe la ricerca ai soggetti che contengono questa stringa nei campi 'nome' o 'piva'
 	filtro?: string;
 	// Restringe la ricerca al soggetto con l'identificativo specificato
@@ -11,8 +12,6 @@ export interface AnagraficaListaRequest extends Auth {
 	cf?: string;
 	// Restringe la ricerca ai soggetti che contengono questa stringa nel campo 'piva'
 	piva?: string;
-	// Specifica il numero di pagina dei risultati (se non specificato vale 1)
-	pagina?: number;
 }
 
 export interface AnagraficaNuovoSingoloRequest extends Auth {

@@ -1,6 +1,7 @@
 import { Auth } from "./auth";
+import { RequestPagination } from "./pagination";
 
-export interface ProdottiListaRequest extends Auth {
+export interface ProdottiListaRequest extends Auth, RequestPagination {
 	// Filtro generico che restringe la ricerca ai prodotti che contengono questa stringa nel nome o nel codice
 	filtro?: string;
 	// Restringe la ricerca ai prodotti che contengono questa stringa nel nome o nella descrizione
@@ -13,8 +14,6 @@ export interface ProdottiListaRequest extends Auth {
 	desc?: string;
 	// Restringe la ricerca ai prodotti che contengono questa stringa nella categoria
 	categoria?: string;
-	// Specifica il numero di pagina dei risultati (se non specificato vale 1)
-	pagina?: number;
 }
 
 export interface ProdottiNuovoSingoloRequest {

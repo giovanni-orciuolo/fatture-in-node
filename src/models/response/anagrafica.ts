@@ -1,4 +1,4 @@
-import { GenericSuccess } from "../success";
+import { GenericSuccess } from "./success";
 
 export interface AnagraficaListaResponse extends GenericSuccess {
 	// Lista dei clienti (solo se richiesti i clienti)

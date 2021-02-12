@@ -1,4 +1,4 @@
-import { GenericSuccess } from "../success";
+import { GenericSuccess } from "./success";
 
 export interface ProdottiListaResponse extends GenericSuccess {
 	// Lista dei prodotti

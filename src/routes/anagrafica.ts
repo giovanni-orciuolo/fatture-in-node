@@ -6,7 +6,7 @@ import {
 	AnagraficaNuovoSingoloRequest
 } from "../models/request/anagrafica";
 import { AnagraficaListaResponse, AnagraficaNuovoSingoloResponse } from "../models/response/anagrafica";
-import { GenericSuccess } from "../models/success";
+import { GenericSuccess } from "../models/response/success";
 
 /**
  * Questo set di funzioni agisce su diverse tipologie di soggetti, identificati dalla variabile {soggetto}.
