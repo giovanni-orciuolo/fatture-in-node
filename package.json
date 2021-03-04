@@ -6,7 +6,7 @@
 	"types": "dist/index.d.ts",
 	"repository": "git@github.com:giovanni-orciuolo/fatture-in-node.git",
 	"author": "Giovanni Orciuolo <giovanni@orciuolo.it>",
-	"license": "GPLv3",
+	"license": "GPL-3.0-only",
 	"scripts": {
 		"build": "tsc",
 		"prepublish": "tsc"

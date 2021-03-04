@@ -9,7 +9,8 @@
 		"strictNullChecks": true,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"removeComments": false
 	},
 	"include": [
 		"src/**/*"
