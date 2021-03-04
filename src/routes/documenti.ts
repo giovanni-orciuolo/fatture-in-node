@@ -14,6 +14,7 @@ import {
 	DocNuovoResponse
 } from "../models/response/documento";
 import { GenericSuccess } from "../models/response/success";
+import { Auth } from "../models/request/auth";
 
 /**
  * Questo set di funzioni agisce su diverse tipologie di documenti, identificate dalla variabile {tipo-doc}.
@@ -23,7 +24,9 @@ import { GenericSuccess } from "../models/response/success";
  * e "ordforn" gli ordini a fornitore.
  */
 
-function make(tipo_doc: "fatture" | "ricevute" | "preventivi" | "ordini" | "ndc" | "proforma" | "rapporti" | "ordforn" | "ddt") {
+export type TipoDoc = "fatture" | "ricevute" | "preventivi" | "ordini" | "ndc" | "proforma" | "rapporti" | "ordforn" | "ddt";
+
+function make(tipo_doc: TipoDoc, auth: Required<Auth>) {
 	return {
 		/**
 		 * Restituisce la lista delle fatture o dei documenti richiesti per l'anno di competenza specificato.
@@ -31,49 +34,49 @@ function make(tipo_doc: "fatture" | "ricevute" | "preventivi" | "ordini" | "ndc"
 		 * vengono organizzati in pagine per evitare risposte troppo pesanti
 		 * (attualmente 500 risultati per pagina).
 		 */
-		lista: (req: DocListaRequest) => call<DocListaResponse>(`/${tipo_doc}/lista`, req),
+		lista: (req: DocListaRequest) => call<DocListaResponse>(`/${tipo_doc}/lista`, { ...auth, ...req }),
 		/**
 		 * Restituisce i dettagli del documento richiesto.
 		 */
-		dettagli: (req: DocDettagliRequest) => call<DocDettagliResponse>(`/${tipo_doc}/dettagli`, req),
+		dettagli: (req: DocDettagliRequest) => call<DocDettagliResponse>(`/${tipo_doc}/dettagli`, { ...auth, ...req }),
 		/**
 		 * Crea un nuovo documento. In caso di parametri non specificati vengono assunti quelli predefiniti.
 		 */
-		nuovo: (req: DocNuovoRequest) => call<DocNuovoResponse>(`/${tipo_doc}/nuovo`, req),
+		nuovo: (req: DocNuovoRequest) => call<DocNuovoResponse>(`/${tipo_doc}/nuovo`, { ...auth, ...req }),
 		/**
 		 * Modifica un documento esistente.
 		 * In caso di parametri non specificati il corrispondente valore già presente rimane invariato.
 		 */
-		modifica: (req: DocModificaRequest) => call<GenericSuccess>(`/${tipo_doc}/modifica`, req),
+		modifica: (req: DocModificaRequest) => call<GenericSuccess>(`/${tipo_doc}/modifica`, { ...auth, ...req }),
 		/**
 		 * Elimina definitivamente un documento.
 		 */
-		elimina: (req: DocEliminaRequest) => call<GenericSuccess>(`/${tipo_doc}/elimina`, req),
+		elimina: (req: DocEliminaRequest) => call<GenericSuccess>(`/${tipo_doc}/elimina`, { ...auth, ...req }),
 		/**
 		 * Restituisce informazioni utili alla creazione e alla modifica di un documento,
 		 * tra cui le impostazioni predefinite e le numerazioni utilizzate.
 		 */
-		info: (req: DocInfoRequest) => call<DocInfoResponse>(`/${tipo_doc}/info`, req),
+		info: (req: DocInfoRequest) => call<DocInfoResponse>(`/${tipo_doc}/info`, { ...auth, ...req }),
 		/**
 		 * Restituisce informazioni predefinite e/o utili per l'invio tramite e-mail del documento.
 		 */
-		infomail: (req: DocInfomailRequest) => call<DocInfomailResponse>(`/${tipo_doc}/infomail`, req),
+		infomail: (req: DocInfomailRequest) => call<DocInfomailResponse>(`/${tipo_doc}/infomail`, { ...auth, ...req }),
 		/**
 		 * Effettua l'invio del documento tramite e-mail.
 		 * Vedi anche la funzione /infomail per maggiori informazioni.
 		 */
-		inviamail: (req: DocInviamailRequest) => call<GenericSuccess>(`/${tipo_doc}/inviamail`, req),
+		inviamail: (req: DocInviamailRequest) => call<GenericSuccess>(`/${tipo_doc}/inviamail`, { ...auth, ...req }),
 	};
 }
 
-export const documenti = {
-	fatture: make("fatture"),
-	ricevute: make("ricevute"),
-	preventivi: make("preventivi"),
-	ordini: make("ordini"),
-	ndc: make("ndc"),
-	proforma: make("proforma"),
-	rapporti: make("rapporti"),
-	ordforn: make("ordforn"),
-	ddt: make("ddt"),
-}
+export const documenti = (auth: Required<Auth>) => ({
+	fatture: make("fatture", auth),
+	ricevute: make("ricevute", auth),
+	preventivi: make("preventivi", auth),
+	ordini: make("ordini", auth),
+	ndc: make("ndc", auth),
+	proforma: make("proforma", auth),
+	rapporti: make("rapporti", auth),
+	ordforn: make("ordforn", auth),
+	ddt: make("ddt", auth),
+});

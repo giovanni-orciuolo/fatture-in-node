@@ -1,8 +1,9 @@
 import { InfoListaRequest } from "../models/request/info";
 import { call } from "./route";
 import { InfoListaResponse } from "../models/response/info";
+import { Auth } from "../models/request/auth";
 
-export const info = {
+export const info = (auth: Required<Auth>) => ({
 	/**
 	 * Restituisce informazioni riguardanti l'account, i valori fissi e quelli personali,
 	 * ad esempio il nome, le liste di valute, codici iva, paesi etc.
@@ -10,5 +11,5 @@ export const info = {
 	 * nome, durata_licenza, tipo_licenza, lista_valute, lista_iva,
 	 * lista_paesi, lista_template, lista_conti, lista_metodi_pagamento.
 	 */
-	account: (req: InfoListaRequest) => call<InfoListaResponse>(`/info/account`, req),
-}
+	account: (req: InfoListaRequest) => call<InfoListaResponse>(`/info/account`, { ...auth, ...req }),
+});
