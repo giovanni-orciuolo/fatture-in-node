@@ -6,8 +6,12 @@
 		"outDir": "dist",
 		"strict": true,
 		"noImplicitAny": true,
+		"strictNullChecks": true,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true
-	}
+	},
+	"include": [
+		"src/**/*"
+	]
 }
