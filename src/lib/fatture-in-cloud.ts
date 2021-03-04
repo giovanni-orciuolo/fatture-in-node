@@ -6,6 +6,7 @@ import { acquisti } from "../routes/acquisti";
 import { corrispettivi } from "../routes/corrispettivi";
 import { magazzino } from "../routes/magazzino";
 import { mail } from "../routes/mail";
+import { info } from "../routes/info";
 
 export class FattureInCloud {
 
@@ -17,5 +18,6 @@ export class FattureInCloud {
 	corrispettivi = corrispettivi;
 	magazzino = magazzino;
 	mail = mail;
+	info = info;
 
 }
