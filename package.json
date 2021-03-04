@@ -1,11 +1,11 @@
 {
 	"name": "fatture-in-node",
 	"version": "1.0.0",
-	"description": "Fatture in Cloud NodeJS SDK - Fully typed!",
+	"description": "Fatture in Cloud NodeJS Typescript SDK",
 	"main": "dist/index.js",
-	"repository": "git@github.com:DoubleHub/fatture-in-node.git",
+	"repository": "git@github.com:giovanni-orciuolo/fatture-in-node.git",
 	"author": "Giovanni Orciuolo <giovanni@orciuolo.it>",
-	"license": "MIT",
+	"license": "GPLv3",
 	"devDependencies": {
 		"@types/node": "^14.14.26",
 		"typescript": "^4.1.5"
