@@ -5,6 +5,7 @@ import { prodotti } from "../routes/prodotti";
 import { acquisti } from "../routes/acquisti";
 import { corrispettivi } from "../routes/corrispettivi";
 import { magazzino } from "../routes/magazzino";
+import { mail } from "../routes/mail";
 
 export class FattureInCloud {
 
@@ -15,5 +16,6 @@ export class FattureInCloud {
 	acquisti = acquisti;
 	corrispettivi = corrispettivi;
 	magazzino = magazzino;
+	mail = mail;
 
 }
