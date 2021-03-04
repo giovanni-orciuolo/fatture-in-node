@@ -99,7 +99,7 @@ export interface AcquistiNuovoArticolo {
 export interface AcquistiModificaRequest extends Partial<AcquistiNuovoRequest> {
 }
 
-export interface AcquistiEliminaRequest {
+export interface AcquistiEliminaRequest extends Auth {
 	// Identificativo del documento da eliminare
 	id?: string;
 }
