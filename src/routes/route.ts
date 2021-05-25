@@ -1,4 +1,5 @@
 import { GenericError } from "../models/response/error";
+import fetch from "node-fetch";
 
 export const FIC_ENDPOINT = "https://api.fattureincloud.it/v1";
 
