@@ -11,27 +11,27 @@ import { Auth } from "../models/request/auth";
 
 export class FattureInCloud {
 
-	readonly #richiesta = richiesta(this.auth);
-	readonly #anagrafica = anagrafica(this.auth);
-	readonly #prodotti = prodotti(this.auth);
-	readonly #documenti = documenti(this.auth);
-	readonly #acquisti = acquisti(this.auth);
-	readonly #corrispettivi = corrispettivi(this.auth);
-	readonly #magazzino = magazzino(this.auth);
-	readonly #mail = mail(this.auth);
-	readonly #info = info(this.auth);
+	private readonly _richiesta = richiesta(this.auth);
+	private readonly _anagrafica = anagrafica(this.auth);
+	private readonly _prodotti = prodotti(this.auth);
+	private readonly _documenti = documenti(this.auth);
+	private readonly _acquisti = acquisti(this.auth);
+	private readonly _corrispettivi = corrispettivi(this.auth);
+	private readonly _magazzino = magazzino(this.auth);
+	private readonly _mail = mail(this.auth);
+	private readonly _info = info(this.auth);
 
 	constructor(private auth: Required<Auth>) {
 	}
 
-	get richiesta() { return this.#richiesta };
-	get anagrafica() { return this.#anagrafica };
-	get prodotti() { return this.#prodotti };
-	get documenti() { return this.#documenti };
-	get acquisti() { return this.#acquisti };
-	get corrispettivi() { return this.#corrispettivi };
-	get magazzino() { return this.#magazzino };
-	get mail() { return this.#mail };
-	get info() { return this.#info };
+	get richiesta() { return this._richiesta };
+	get anagrafica() { return this._anagrafica };
+	get prodotti() { return this._prodotti };
+	get documenti() { return this._documenti };
+	get acquisti() { return this._acquisti };
+	get corrispettivi() { return this._corrispettivi };
+	get magazzino() { return this._magazzino };
+	get mail() { return this._mail };
+	get info() { return this._info };
 
 }
