@@ -1,6 +1,6 @@
 {
 	"name": "fatture-in-node",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Fatture in Cloud NodeJS Typescript SDK",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
