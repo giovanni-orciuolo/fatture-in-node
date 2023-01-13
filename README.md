@@ -1,3 +1,7 @@
+# ⚠️ ATTENZIONE WARNING ⚠️
+
+Dopo svariati anni, finalmente Fatture in Cloud si è decisa a mettere online la V2 delle loro API! Questa nuova API è fatta decisamente meglio e seguendo lo standard OpenAPI dispone di diversi SDK, tra cui uno proprio per TypeScript. Dunque essenzialmente questo progetto cessa di avere senso a partire dal 31 Gennaio 2023. Per questo motivo, il progetto da ora in avanti è in formato read-only. Vi prego di usare le nuove bellissime API partendo da qui: https://developers.fattureincloud.it/
+
 ![Logo FIC](https://api.fattureincloud.it/v1/documentation/dist/images/logo-white-beta.png)
 
 # Fatture in Node :rocket:
